@@ -5,7 +5,9 @@
  */
 package lab7_sergiosuazo;
 
+import com.sun.xml.internal.ws.wsdl.writer.UsingAddressing;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +33,20 @@ public class SeetGeek extends javax.swing.JFrame {
     private void initComponents() {
 
         jd_Normal = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_artistas = new javax.swing.JList<>();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        pb_artistas = new javax.swing.JProgressBar();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_eventos = new javax.swing.JList<>();
+        pb_evento = new javax.swing.JProgressBar();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jd_Admin = new javax.swing.JDialog();
         jd_Artista = new javax.swing.JDialog();
         jd_Crear = new javax.swing.JDialog();
@@ -57,6 +73,7 @@ public class SeetGeek extends javax.swing.JFrame {
         cb_tipo = new javax.swing.JComboBox<>();
         pb_registroA = new javax.swing.JProgressBar();
         jButton5 = new javax.swing.JButton();
+        jd_Canciones = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -66,15 +83,127 @@ public class SeetGeek extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        jl_artistas.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jl_artistas);
+
+        jButton6.setText("Cargar");
+
+        jButton7.setText("Ver Canciones");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jButton8.setText("Agregar a Favoritos");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(jButton8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addComponent(jButton6)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(pb_artistas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pb_artistas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
+                    .addComponent(jButton8))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Artistas", jPanel1);
+
+        jl_eventos.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jl_eventos);
+
+        jButton9.setText("Cargar");
+
+        jButton10.setText("Asistir al evento");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(pb_evento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jButton9))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton10)))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pb_evento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Eventos", jPanel2);
+
         javax.swing.GroupLayout jd_NormalLayout = new javax.swing.GroupLayout(jd_Normal.getContentPane());
         jd_Normal.getContentPane().setLayout(jd_NormalLayout);
         jd_NormalLayout.setHorizontalGroup(
             jd_NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_NormalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jd_NormalLayout.setVerticalGroup(
             jd_NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_NormalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jd_AdminLayout = new javax.swing.GroupLayout(jd_Admin.getContentPane());
@@ -261,6 +390,17 @@ public class SeetGeek extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout jd_CancionesLayout = new javax.swing.GroupLayout(jd_Canciones.getContentPane());
+        jd_Canciones.getContentPane().setLayout(jd_CancionesLayout);
+        jd_CancionesLayout.setHorizontalGroup(
+            jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_CancionesLayout.setVerticalGroup(
+            jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Usuario:");
@@ -268,12 +408,27 @@ public class SeetGeek extends javax.swing.JFrame {
         jLabel2.setText("Contraseña:");
 
         jButton1.setText("Ingresar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jLabel3.setText("Nueva Cuenta");
 
         jButton2.setText("Normal");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Artista");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -366,6 +521,84 @@ public class SeetGeek extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        jd_Crear.setVisible(true);
+        jd_Crear.pack();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        jd_CrearArtista.setVisible(true);
+        jd_CrearArtista.pack();
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        try {
+            boolean login=false;
+            if(tf_user.getText().equals("leobanegas")&&pf_contra.getText().equals("99"))
+            {
+                jd_Admin.setVisible(true);
+                jd_Admin.pack();
+                login=true;
+            }
+            else
+            {
+                for (int i = 0; i < personas.size(); i++) {
+                    if(personas.get(i).getUsuario().equals(tf_user.getText()))
+                    {
+                        current=personas.get(i);
+                        login=true;
+                        break;
+                    }
+                }
+                if(current instanceof Usuario)
+                {
+                    jd_Normal.setVisible(true);
+                    jd_Normal.pack();
+                }
+                else if(current instanceof Artista)
+                {
+                    jd_Artista.setVisible(true);
+                    jd_Artista.pack();
+                }
+            }
+            if(!login)
+            {
+                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorractas");
+            }
+            tf_user.setText("");
+            pf_contra.setText("");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Hubo un problema al ingresar");
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        if(jl_artistas.getSelectedIndex()>=0)
+        {
+            Artista a =artistas.get(jl_artistas.getSelectedIndex());
+            ((Usuario)current).getArtistas().add(a);
+            JOptionPane.showMessageDialog(this, "Se agrego el artista a la lista de favoritos");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "No se selecciono ningun artista");
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+        if(jl_artistas.getSelectedIndex()>=0)
+        {
+            jd_Canciones.setVisible(true);
+            jd_Canciones.pack();
+            artista=artistas.get(jl_artistas.getSelectedIndex());
+        }
+    }//GEN-LAST:event_jButton7MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -404,10 +637,15 @@ public class SeetGeek extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_tipo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -420,11 +658,21 @@ public class SeetGeek extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_Admin;
     private javax.swing.JDialog jd_Artista;
+    private javax.swing.JDialog jd_Canciones;
     private javax.swing.JDialog jd_Crear;
     private javax.swing.JDialog jd_CrearArtista;
     private javax.swing.JDialog jd_Normal;
+    private javax.swing.JList<String> jl_artistas;
+    private javax.swing.JList<String> jl_eventos;
+    private javax.swing.JProgressBar pb_artistas;
+    private javax.swing.JProgressBar pb_evento;
     private javax.swing.JProgressBar pb_registroA;
     private javax.swing.JProgressBar pb_registroN;
     private javax.swing.JPasswordField pf_contra;
@@ -439,4 +687,7 @@ public class SeetGeek extends javax.swing.JFrame {
     private javax.swing.JTextField tf_userN;
     // End of variables declaration//GEN-END:variables
     ArrayList<Persona> personas=new ArrayList<>();
+    ArrayList<Artista>artistas=new ArrayList<>();
+    Persona current;
+    Artista artista;
 }
