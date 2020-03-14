@@ -5,12 +5,16 @@
  */
 package lab7_sergiosuazo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Sergio
  */
-public class Persona {
+public class Persona implements Serializable{
     private String nombre,usuario,contra;
+    
+    private static final long SerialVersionUID=777L;
 
     public Persona() {
     }

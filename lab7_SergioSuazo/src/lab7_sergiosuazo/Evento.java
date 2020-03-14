@@ -5,6 +5,7 @@
  */
 package lab7_sergiosuazo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,11 +13,13 @@ import java.util.Date;
  *
  * @author Sergio
  */
-public class Evento {
+public class Evento implements Serializable{
     private String ciudad,lugar;
     private int capacidad;
     private Date fecha;
     private ArrayList<Cancion> setlist=new ArrayList<Cancion>();
+    
+    private static final long SerialVersionUID=777L;
 
     public Evento() {
     }

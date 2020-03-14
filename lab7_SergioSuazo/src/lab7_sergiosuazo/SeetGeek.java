@@ -9,6 +9,7 @@ import com.sun.xml.internal.ws.wsdl.writer.UsingAddressing;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -48,7 +49,17 @@ public class SeetGeek extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jd_Admin = new javax.swing.JDialog();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jt_bitacora = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jl_eliminar = new javax.swing.JList<>();
+        jButton18 = new javax.swing.JButton();
         jd_Artista = new javax.swing.JDialog();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         jd_Crear = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -73,7 +84,34 @@ public class SeetGeek extends javax.swing.JFrame {
         cb_tipo = new javax.swing.JComboBox<>();
         pb_registroA = new javax.swing.JProgressBar();
         jButton5 = new javax.swing.JButton();
+        jd_CrearCanciones = new javax.swing.JDialog();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        tf_nombreCancion = new javax.swing.JTextField();
+        sp_duracion = new javax.swing.JSpinner();
+        pb_cancion = new javax.swing.JProgressBar();
+        jButton13 = new javax.swing.JButton();
         jd_Canciones = new javax.swing.JDialog();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_canciones = new javax.swing.JList<>();
+        pb_listaCanciones = new javax.swing.JProgressBar();
+        jButton17 = new javax.swing.JButton();
+        jd_CrearEvento = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tf_ciudad = new javax.swing.JTextField();
+        tf_lugar = new javax.swing.JTextField();
+        sp_capacidad = new javax.swing.JSpinner();
+        dc_fecha = new com.toedter.calendar.JDateChooser();
+        pb_crearEvento = new javax.swing.JProgressBar();
+        jButton14 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_cancionesE = new javax.swing.JList<>();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jd_Simulacion = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -87,6 +125,11 @@ public class SeetGeek extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jl_artistas);
 
         jButton6.setText("Cargar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jButton7.setText("Ver Canciones");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,8 +193,18 @@ public class SeetGeek extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jl_eventos);
 
         jButton9.setText("Cargar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         jButton10.setText("Asistir al evento");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -206,26 +259,124 @@ public class SeetGeek extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jt_bitacora.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Persona", "Accion", "Tiempo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(jt_bitacora);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Bitacora", jPanel3);
+
+        jl_eliminar.setModel(new DefaultListModel());
+        jScrollPane6.setViewportView(jl_eliminar);
+
+        jButton18.setText("Eliminar");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jButton18)))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton18)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Eliminar", jPanel4);
+
         javax.swing.GroupLayout jd_AdminLayout = new javax.swing.GroupLayout(jd_Admin.getContentPane());
         jd_Admin.getContentPane().setLayout(jd_AdminLayout);
         jd_AdminLayout.setHorizontalGroup(
             jd_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_AdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2)
+                .addContainerGap())
         );
         jd_AdminLayout.setVerticalGroup(
             jd_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_AdminLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        jButton11.setText("Crear Cancion");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        jButton12.setText("Crear Evento");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_ArtistaLayout = new javax.swing.GroupLayout(jd_Artista.getContentPane());
         jd_Artista.getContentPane().setLayout(jd_ArtistaLayout);
         jd_ArtistaLayout.setHorizontalGroup(
             jd_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_ArtistaLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jd_ArtistaLayout.setVerticalGroup(
             jd_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_ArtistaLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(jd_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jLabel4.setText("Nombre:");
@@ -390,14 +541,211 @@ public class SeetGeek extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jLabel13.setText("Nombre:");
+
+        jLabel14.setText("Duracion:");
+
+        jButton13.setText("Crear");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_CrearCancionesLayout = new javax.swing.GroupLayout(jd_CrearCanciones.getContentPane());
+        jd_CrearCanciones.getContentPane().setLayout(jd_CrearCancionesLayout);
+        jd_CrearCancionesLayout.setHorizontalGroup(
+            jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearCancionesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(pb_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton13))
+                    .addGroup(jd_CrearCancionesLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_nombreCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_CrearCancionesLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sp_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        jd_CrearCancionesLayout.setVerticalGroup(
+            jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearCancionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tf_nombreCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_CrearCancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(sp_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(pb_cancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(jButton13)
+                .addContainerGap())
+        );
+
+        jl_canciones.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jl_canciones);
+
+        jButton17.setText("Cargar");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_CancionesLayout = new javax.swing.GroupLayout(jd_Canciones.getContentPane());
         jd_Canciones.getContentPane().setLayout(jd_CancionesLayout);
         jd_CancionesLayout.setHorizontalGroup(
             jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_CancionesLayout.createSequentialGroup()
+                .addGroup(jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_CancionesLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addGroup(jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(pb_listaCanciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton17)))
+                    .addGroup(jd_CancionesLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jd_CancionesLayout.setVerticalGroup(
             jd_CancionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CancionesLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pb_listaCanciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton17)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jLabel15.setText("Ciudad:");
+
+        jLabel16.setText("Lugar:");
+
+        jLabel17.setText("Capacidad:");
+
+        jLabel18.setText("Fecha:");
+
+        sp_capacidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        jButton14.setText("Crear");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
+        jl_cancionesE.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_cancionesE);
+
+        jButton15.setText("Cargar");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        jButton16.setText("Agregar al Setlist");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_CrearEventoLayout = new javax.swing.GroupLayout(jd_CrearEvento.getContentPane());
+        jd_CrearEvento.getContentPane().setLayout(jd_CrearEventoLayout);
+        jd_CrearEventoLayout.setHorizontalGroup(
+            jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jButton14)
+                            .addComponent(pb_crearEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton15))
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton16)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addComponent(sp_capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel16))
+                                .addGap(18, 18, 18)
+                                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_ciudad)
+                                    .addComponent(tf_lugar, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
+                            .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addComponent(dc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jd_CrearEventoLayout.setVerticalGroup(
+            jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_lugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(sp_capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(dc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_CrearEventoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_CrearEventoLayout.createSequentialGroup()
+                        .addComponent(jButton16)
+                        .addGap(36, 36, 36)))
+                .addComponent(jButton15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(pb_crearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton14)
+                .addGap(30, 30, 30))
+        );
+
+        javax.swing.GroupLayout jd_SimulacionLayout = new javax.swing.GroupLayout(jd_Simulacion.getContentPane());
+        jd_Simulacion.getContentPane().setLayout(jd_SimulacionLayout);
+        jd_SimulacionLayout.setHorizontalGroup(
+            jd_SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_SimulacionLayout.setVerticalGroup(
+            jd_SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
@@ -494,6 +842,17 @@ public class SeetGeek extends javax.swing.JFrame {
             tf_contraN.setText("");
             tf_userN.setText("");
             sp_edad.setValue(0);
+            adminUsuario ap = new adminUsuario("./usuarios.cbm");
+            ap.cargarArchivo();
+            ap.setUsuario(u);
+            ap.escribirArchivo();
+            hc=new HiloCargar(pb_registroN, 5,jd_Crear);
+            hc.start();
+            Accion a=new Accion(null, "registro", 5);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error al regsitrarse");
         }
@@ -509,13 +868,28 @@ public class SeetGeek extends javax.swing.JFrame {
                 int edad =Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del solista: "));
                 Solista s=new Solista(edad, tf_genero.getText(), tf_nombreA.getText(), tf_userA.getText(), tf_contraA.getText());
                 personas.add(s);
+                adminSolista ap = new adminSolista("./solistas.cbm");
+                ap.cargarArchivo();
+                ap.setSolista(s);
+                ap.escribirArchivo();
             }
             else
             {
                 int integrantes=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de miembros: "));
                 Banda b=new Banda(integrantes, tf_genero.getText(), tf_nombreA.getText(), tf_userA.getText(), tf_contraA.getText());
                 personas.add(b);
+                adminBanda ap = new adminBanda("./bandas.cbm");
+                ap.cargarArchivo();
+                ap.setBanda(b);
+                ap.escribirArchivo();
             }
+            hc=new HiloCargar(pb_registroA, 5,jd_CrearArtista);
+            hc.start();
+            Accion a=new Accion(null, "registro", 5);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error al regsitrarse");
         }
@@ -542,6 +916,19 @@ public class SeetGeek extends javax.swing.JFrame {
                 jd_Admin.setVisible(true);
                 jd_Admin.pack();
                 login=true;
+                adminAccion aa=new adminAccion("./acciones.cbm");
+                aa.cargarArchivo();
+                DefaultTableModel m=(DefaultTableModel)jt_bitacora.getModel();
+                for (int i = 0; i < aa.getListaAccion().size(); i++) {
+                    Object[] newrow= {
+                        aa.getListaAccion().get(i).getPersona(),
+                        aa.getListaAccion().get(i).getAccion(),
+                        aa.getListaAccion().get(i).getTiempo()
+                    };
+                m.addRow(newrow);
+                
+                }
+                jt_bitacora.setModel(m);
             }
             else
             {
@@ -599,6 +986,130 @@ public class SeetGeek extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton7MouseClicked
 
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+        try {
+            Cancion c=new Cancion(tf_nombreCancion.getText(), (int)sp_duracion.getValue());
+            if(current instanceof Solista)
+            {
+                adminSolista as=new adminSolista("./solistas.cbm");
+                as.cargarArchivo();
+                for (int i = 0; i < as.getListaSolista().size(); i++) {
+                    if(current.equals(as.getListaSolista().get(i)))
+                    {
+                        as.getListaSolista().get(i).getCanciones().add(c);
+                    }
+                }
+                as.escribirArchivo();
+                ((Artista)current).getCanciones().add(c);
+            }
+            hc=new HiloCargar(pb_cancion, 3, jd_CrearCanciones);
+            hc.start();
+            Accion a=new Accion(current, "Crear cancion", 3);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        jd_CrearCanciones.setVisible(true);
+        jd_CrearCanciones.pack();
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        jd_CrearEvento.setVisible(true);
+        jd_CrearEvento.pack();
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+        try {
+            Evento e =new Evento(tf_ciudad.getText(), tf_lugar.getText(), (int)sp_capacidad.getValue(), dc_fecha.getDate());
+            e.setSetlist(setlist);
+            adminEventos ae=new adminEventos("./eventos.cbm");
+            ae.cargarArchivo();
+            ae.getListaEventos().add(e);
+            ae.escribirArchivo();
+            hc=new HiloCargar(pb_crearEvento, 8, jd_CrearEvento);
+            hc.start();
+            Accion a=new Accion(current, "Crear Evento", 8);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        // TODO add your handling code here:
+        if(jl_cancionesE.getSelectedIndex()>=0)
+        {
+            setlist.add(((Artista)current).getCanciones().get(jl_cancionesE.getSelectedIndex()));
+            JOptionPane.showMessageDialog(this, "Se agrego la cancion al setlist");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "no se selecciono ninguna cancion");
+        }
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        jd_Simulacion.setVisible(true);
+        jd_Simulacion.pack();
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+            hl=new HiloListas(pb_artistas, jl_artistas,jd_Normal);
+            hl.start();
+            Accion a=new Accion(current, "cargar lista", 3);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+            hl=new HiloListas(pb_evento, jl_eventos,jd_Normal);
+            hl.start();
+            Accion a=new Accion(current, "cargar lista", 3);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        hl=new HiloListas(pb_listaCanciones, jl_canciones, jd_Canciones);
+        hl.start();
+        Accion a=new Accion(current, "cargar lista", 3);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        hl=new HiloListas(pb_crearEvento, jl_cancionesE, jd_CrearEvento);
+        hl.start();
+        Accion a=new Accion(current, "cargar lista", 3);
+            adminAccion aa=new adminAccion("./acciones.cbm");
+            aa.cargarArchivo();
+            aa.setAccion(a);
+            aa.escribirArchivo();
+    }//GEN-LAST:event_jButton15MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -636,8 +1147,17 @@ public class SeetGeek extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_tipo;
+    private com.toedter.calendar.JDateChooser dc_fecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -650,6 +1170,12 @@ public class SeetGeek extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -660,34 +1186,59 @@ public class SeetGeek extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JDialog jd_Admin;
     private javax.swing.JDialog jd_Artista;
     private javax.swing.JDialog jd_Canciones;
     private javax.swing.JDialog jd_Crear;
     private javax.swing.JDialog jd_CrearArtista;
+    private javax.swing.JDialog jd_CrearCanciones;
+    private javax.swing.JDialog jd_CrearEvento;
     private javax.swing.JDialog jd_Normal;
+    private javax.swing.JDialog jd_Simulacion;
     private javax.swing.JList<String> jl_artistas;
+    private javax.swing.JList<String> jl_canciones;
+    private javax.swing.JList<String> jl_cancionesE;
+    private javax.swing.JList<String> jl_eliminar;
     private javax.swing.JList<String> jl_eventos;
+    private javax.swing.JTable jt_bitacora;
     private javax.swing.JProgressBar pb_artistas;
+    private javax.swing.JProgressBar pb_cancion;
+    private javax.swing.JProgressBar pb_crearEvento;
     private javax.swing.JProgressBar pb_evento;
+    private javax.swing.JProgressBar pb_listaCanciones;
     private javax.swing.JProgressBar pb_registroA;
     private javax.swing.JProgressBar pb_registroN;
     private javax.swing.JPasswordField pf_contra;
+    private javax.swing.JSpinner sp_capacidad;
+    private javax.swing.JSpinner sp_duracion;
     private javax.swing.JSpinner sp_edad;
+    private javax.swing.JTextField tf_ciudad;
     private javax.swing.JTextField tf_contraA;
     private javax.swing.JTextField tf_contraN;
     private javax.swing.JTextField tf_genero;
+    private javax.swing.JTextField tf_lugar;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombreA;
+    private javax.swing.JTextField tf_nombreCancion;
     private javax.swing.JTextField tf_user;
     private javax.swing.JTextField tf_userA;
     private javax.swing.JTextField tf_userN;
     // End of variables declaration//GEN-END:variables
     ArrayList<Persona> personas=new ArrayList<>();
     ArrayList<Artista>artistas=new ArrayList<>();
+    ArrayList<Cancion>setlist =new ArrayList<>();
+    HiloListas hl;
+    HiloCargar hc;
     Persona current;
     Artista artista;
 }

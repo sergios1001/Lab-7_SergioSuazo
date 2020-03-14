@@ -5,14 +5,18 @@
  */
 package lab7_sergiosuazo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Sergio
  */
-public class Cancion {
+public class Cancion implements Serializable{
     private String nombre;
     private int duracion;
 
+    private static final long SerialVersionUID=777L;
+    
     public Cancion() {
     }
 
