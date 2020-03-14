@@ -929,6 +929,12 @@ public class SeetGeek extends javax.swing.JFrame {
                 
                 }
                 jt_bitacora.setModel(m);
+                DefaultListModel m1=new DefaultListModel();
+                for (int i = 0; i < personas.size(); i++) {
+                    m1.addElement(personas.get(i));
+                    
+                }
+                jl_eliminar.setModel(m1);
             }
             else
             {
